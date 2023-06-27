@@ -1,15 +1,20 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const express = require("express");
+const app = express();
 
-app.get('/', (req, res) => {
-  res.send('FLAG not found')
-})
+//body-parserモジュールを読み込み初期化する
+const bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({ extended: true }));
+//HTTPリクエストのボディをjsonで扱えるようになる
+app.use(bodyParser.json());
 
-app.post('/', (req, res) => {
-  res.send('そろそろ気が狂いそうです')
-})
+app.listen(8080, () => {
+  console.log("サーバー起動中");
+});
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+//POSTリクエストの作成
+app.post("/", (req, res) => {
+  //HTTPリクエストのボディを出力
+  console.log(req.body);
+  console.log("POSTリクエストを受け取りました");
+  res.end();
+});
