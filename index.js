@@ -3,7 +3,7 @@ const app = express()
 const port = 3000
 
 app.get('/', (req, res) => {
-  res.send('フラグはどこにあるんでしょうか')
+  res.send('FLAG not found')
 })
 
 app.listen(port, () => {
