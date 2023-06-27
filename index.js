@@ -6,6 +6,10 @@ app.get('/', (req, res) => {
   res.send('FLAG not found')
 })
 
+app.post('/', (req, res) => {
+  res.send('そろそろ気が狂いそうです')
+})
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
